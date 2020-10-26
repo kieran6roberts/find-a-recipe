@@ -1,0 +1,55 @@
+:root {
+  --light1: #fdf2f2;
+  --light2: #ddd3d3;
+  --light3: #aca3a3;
+  --dark1: #0e0d0d;
+  --dark2: #222020;
+  --dark3: #474242;
+  --primary-color: rgb(238, 196, 11);
+  --font: "Montserrat", sans-serif;
+  --header-sm: clamp(1.3rem, 1.5vw, 1.8rem);
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/montserrat-v15-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../assets/fonts/montserrat-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/montserrat-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/montserrat-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../assets/fonts/montserrat-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/montserrat-v15-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/montserrat-v15-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../assets/fonts/montserrat-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/montserrat-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/montserrat-v15-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../assets/fonts/montserrat-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/montserrat-v15-latin-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

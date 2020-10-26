@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 1rem 2rem;
+  box-shadow: 2px 0px 1px var(--light3);
+}
+
+.logo {
+  font-size: var(--header-sm);
+  color: var(--dark1);
+  text-transform: uppercase;
+}
+
+.items {
+  display: flex;
+  text-transform: capitalize;
+}
+
+.link {
+  color: var(--light3);
+}
+
+.marginLeft {
+  margin-left: 1rem;
+}
+
+/* active nav link */
+.active {
+  color: var(--primary-color);
+}
+
+@media only screen and (min-width: 700px ) {
+  .nav {
+    padding: 1rem 5rem;
+  }
+}
