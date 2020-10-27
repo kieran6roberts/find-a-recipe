@@ -4,22 +4,26 @@
   align-items: center;
   height: 10vh;
   padding: 1rem 2rem;
-  box-shadow: 2px 0px 1px var(--light3);
+  box-shadow: 2px 0px 1px var(--light2);
 }
 
 .logo {
-  font-size: var(--header-sm);
-  color: var(--dark1);
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: none;
 }
 
 .items {
   display: flex;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .link {
   color: var(--light3);
+  font-size: var(--text-sm);
 }
 
 .marginLeft {
@@ -34,5 +38,17 @@
 @media only screen and (min-width: 700px ) {
   .nav {
     padding: 1rem 5rem;
+  }
+
+  .title {
+    display: block;
+    font-size: var(--text-md);
+    color: var(--dark1);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .image {
+    margin-right: 1rem;
   }
 }

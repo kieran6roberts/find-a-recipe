@@ -1,13 +1,15 @@
 :root {
-  --light1: #fdf2f2;
-  --light2: #ddd3d3;
-  --light3: #aca3a3;
+  --light1: #fffdfd;
+  --light2: #eee5e5;
+  --light3: #c7bcbc;
   --dark1: #0e0d0d;
   --dark2: #222020;
   --dark3: #474242;
-  --primary-color: rgb(238, 196, 11);
+  --primary-color: #eec40b;
   --font: "Montserrat", sans-serif;
-  --header-sm: clamp(1.3rem, 1.5vw, 1.8rem);
+  --text-md: clamp(1.3rem, 2vw, 2.3rem);
+  --text-sm: clamp(1rem, 1.7vw, 1.8rem);
+  --text-xs: clamp(0.8rem, 1.4vw, 1.6rem);
 }
 
 /* montserrat-regular - latin */
@@ -52,4 +54,8 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+input, button {
+  font-family: inherit;
 }
