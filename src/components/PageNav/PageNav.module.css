@@ -4,12 +4,12 @@
   align-items: center;
   height: 14vh;
   padding: 0 2rem;
-  box-shadow: 1px 0px 1px var(--light1);
+  box-shadow: 1px 0px 1px var(--light2);
 }
 
 .header {
-  font-size: var(--text-sm);
-  color: var(--light3);
+  font-size: var(--text-md);
+  color: var(--dark3);
   text-transform: capitalize;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  color: var(--light3);
+  color: var(--dark3);
   font-size: var(--text-xs);
   text-align: center;
   height: 100%;
@@ -40,7 +40,7 @@
 .link:before {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   height: 5px;
   width: 0;
@@ -50,7 +50,7 @@
 
 .link:hover {
   background-color: var(--light2);
-  color: var(--dark3);
+  color: var(--dark1);
 }
 
 .link:hover:before {
@@ -59,6 +59,7 @@
 
 .active {
   color: var(--dark1);
+  background-color: var(--light1);
 }
 
 .active.link:before {

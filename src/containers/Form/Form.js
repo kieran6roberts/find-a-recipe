@@ -1,24 +1,63 @@
 import React, { useEffect, useState } from "react";
-import { API_KEY, APP_ID, BASE_URL } from "../../settings";
+import { useHistory } from "react-router-dom";
+import useCustomForm from "../../hooks/useCustomForm";
+import { API_KEY, BASE_URL } from "../../settings";
 import classes from "./Form.module.css"
 
 const Form = () => {
+  const history = useHistory();
 
-/*
-  useEffect(fetchData) ;
+  const [ recipes, setRecipes ] = useState("");
 
-  const fetchData = async () => {
-    const recipes = await fetch(`${BASE_URL}/search`) 
-  };*/
+  //init values for form inputs
+  const initValues = {
+    name: ""
+  };
 
+  useEffect( () => {
+    if (recipes) { 
+      history.push({
+        pathname: "/browse/results",
+        recipes
+      });
+    }
+  })
+
+  const fetchData = async (query) => {
+    try {
+      const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=2&apiKey=${API_KEY}`);
+      const { results } = await response.json();
+      setRecipes(results);
+    } catch (err) {
+      console.log(err);
+    }
+  }; 
+  
+  const { 
+    values, 
+    changeFormHandler, 
+    submitFormHandler } = useCustomForm({ 
+      initValues,
+      onSubmit: (values) => fetchData(values.name)
+     });
 
   return (
-    <form className={classes.form} role="find recipes">
-      <label for="name" className={classes.searchLabel}>
-        got anything in mind. go ahead and search for it!
+    <form  
+      onSubmit={submitFormHandler}
+      className={classes.form}>
+      <label 
+        htmlFor="name" 
+        className={classes.searchLabel}>
+          search
       </label>
-      <input id="name" type="search" className={classes.searchInput}></input>
-      <input type="submit"></input>
+      <input 
+        id="name"
+        name="search"
+        onChange={changeFormHandler}
+        value={values.name}
+        type="search"
+        className={classes.searchInput} />
+      <input type="submit" className={classes.submit} value="Submit" />
     </form>
   )
 };

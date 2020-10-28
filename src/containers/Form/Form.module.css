@@ -2,12 +2,55 @@
   display: flex;
   flex-direction: column;
   padding: 1rem 2rem;
-  width: 50vw;
-  border: 1px solid black;
+  height: 60vh;
+  width: 100vw;
+}
+
+.searchLabel {
+  font-size: var(--text-xs);
+  text-transform: capitalize;
+  margin-bottom: var(--flow-lg);
+}
+
+.searchInput {
+  font-size: var(--text-xs);
+  background-color: var(--light1);
+  padding: var(--padding-input);
+  margin-bottom: var(--flow-lg);
+  border: 1px solid var(--light3);
+  transition: all 200ms ease-in-out;
+}
+
+#name::-webkit-search-cancel-button{
+  background-color: var(--primary-color);    
+}
+
+.searchInput:hover {
+  background-color: var(--light2);
+}
+
+.searchInput:focus {
+  background-color: var(--light3);
+}
+
+.submit {
+  background-color: var(--light1);
+  color: var(--dark3);
+  width: 30%;
+  padding: var(--padding-btn);
+  border: 1px solid var(--light3);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.submit:hover {
+  background-color: var(--light2);
 }
 
 @media only screen and (min-width: 700px ) {
   .form {
     padding: 1rem 5rem;
+    width: 50VW;
   }
 }

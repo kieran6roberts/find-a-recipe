@@ -4,7 +4,7 @@
   align-items: center;
   height: 10vh;
   padding: 1rem 2rem;
-  box-shadow: 2px 0px 1px var(--light2);
+  box-shadow: 2px 0px 1px var(--light3);
 }
 
 .logo {
@@ -22,7 +22,7 @@
 }
 
 .link {
-  color: var(--light3);
+  color: var(--dark3);
   font-size: var(--text-sm);
 }
 
@@ -42,7 +42,7 @@
 
   .title {
     display: block;
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
     color: var(--dark1);
     text-transform: uppercase;
     font-weight: 700;
