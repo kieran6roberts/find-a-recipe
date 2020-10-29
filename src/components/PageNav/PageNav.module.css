@@ -4,7 +4,7 @@
   align-items: center;
   height: 14vh;
   padding: 0 2rem;
-  box-shadow: 1px 0px 1px var(--light2);
+  border-bottom: 1px solid var(--light2);
 }
 
 .header {
@@ -43,8 +43,7 @@
   bottom: 0;
   left: 0;
   height: 5px;
-  width: 0;
-  background-color: var(--primary-color);
+  width: 100%;
   transition: all 100ms ease;
 }
 
@@ -54,6 +53,7 @@
 }
 
 .link:hover:before {
+  background-color: var(--primary-color);
   width: 100%;
 }
 

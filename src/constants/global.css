@@ -52,6 +52,10 @@
   font-family: var(--font);
 }
 
+html {
+  overflow-y: scroll;
+}
+
 ul {
   list-style: none;
 }

@@ -1,13 +1,11 @@
 import React from "react";
+import classes from "./RecipeContainer.module.css";
 
-const RecipeContainer = ({ title, children }) => {
+const RecipeContainer = ({ children }) => {
   return (
-    <>
-      <span>{title}</span>
-      <ul>
+      <ul className={classes.container}>
         {children}
       </ul>
-    </>
   )
 };
 

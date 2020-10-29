@@ -4,7 +4,7 @@
   align-items: center;
   height: 10vh;
   padding: 1rem 2rem;
-  box-shadow: 2px 0px 1px var(--light3);
+  box-shadow: inset 0px 0px 5px var(--light2);
 }
 
 .logo {

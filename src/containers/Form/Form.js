@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import useCustomForm from "../../hooks/useCustomForm";
+import useSessionStorage from "../../hooks/useSessionStorage";
 import { API_KEY, BASE_URL } from "../../settings";
 import classes from "./Form.module.css"
 
@@ -8,6 +9,7 @@ const Form = () => {
   const history = useHistory();
 
   const [ recipes, setRecipes ] = useState("");
+  const [ storedResults, setStoredResults ] = useSessionStorage("searchResults");
 
   //init values for form inputs
   const initValues = {
@@ -16,16 +18,16 @@ const Form = () => {
 
   useEffect( () => {
     if (recipes) { 
+      setStoredResults(recipes);
       history.push({
-        pathname: "/browse/results",
-        recipes
+        pathname: "/browse/results"
       });
     }
   })
 
   const fetchData = async (query) => {
     try {
-      const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=2&apiKey=${API_KEY}`);
+      const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=5&apiKey=${API_KEY}`);
       const { results } = await response.json();
       setRecipes(results);
     } catch (err) {
