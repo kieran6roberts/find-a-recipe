@@ -1,26 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import useCustomForm from "../../hooks/useCustomForm";
-import useSessionStorage from "../../hooks/useSessionStorage";
+import { useStorageUpdate } from "../../hooks/StorageContext";
 import { API_KEY, BASE_URL } from "../../settings";
 import classes from "./Form.module.css"
 
 const Form = () => {
   const history = useHistory();
-
   const [ recipes, setRecipes ] = useState("");
-  const [ storedResults, setStoredResults ] = useSessionStorage("searchResults");
-
+  const { setSessionResults } = useStorageUpdate();
+  
   //init values for form inputs
   const initValues = {
     name: ""
   };
 
+  const { 
+    values, 
+    changeFormHandler, 
+    submitFormHandler } = useCustomForm({ 
+      initValues,
+      onSubmit: (values) => fetchData(values.name)
+     });
+
   useEffect( () => {
     if (recipes) { 
-      setStoredResults(recipes);
+      setSessionResults(recipes);
       history.push({
-        pathname: "/browse/results"
+        pathname: "/browse/results",
+        state: {
+          data: values.name
+        }
       });
     }
   })
@@ -34,14 +44,6 @@ const Form = () => {
       console.log(err);
     }
   }; 
-  
-  const { 
-    values, 
-    changeFormHandler, 
-    submitFormHandler } = useCustomForm({ 
-      initValues,
-      onSubmit: (values) => fetchData(values.name)
-     });
 
   return (
     <form  

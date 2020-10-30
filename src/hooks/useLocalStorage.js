@@ -11,17 +11,12 @@ const useLocalStorage = (storageKey, initialValue ) => {
     }
   });
 
-  const setValue = value => {
+  const setValue = (value) => {
     if (!value) return;
 
     try {
-      const existing = window.localStorage.getItem(storageKey);
-      const parsed = JSON.parse(existing);
-      console.log(parsed);
-      const newArray = parsed.push(value);
-      console.log(newArray);
-      window.localStorage.setItem(storageKey, JSON.stringify(newArray));
       setStoredValue(value);
+      window.localStorage.setItem(storageKey, JSON.stringify(value));
     } catch (err) {
       console.error(err);
     }
