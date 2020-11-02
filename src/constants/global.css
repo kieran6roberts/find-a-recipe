@@ -1,17 +1,20 @@
 :root {
   --light1: #fffdfd;
-  --light2: #e9e0e0;
-  --light3: #dfd7d7;
+  --light2: #f1e8e8;
+  --light3: #ebdfdf;
   --dark1: #0e0d0d;
   --dark2: #222020;
   --dark3: #474242;
   --primary-color: #eec40b;
   --font: "Montserrat", sans-serif;
-  --text-md: clamp(1.3rem, 1.9vw, 2.2rem);
+  --text-lg: clamp(2.4rem, 2.3vw, 3.2rem);
+  --text-md: clamp(1.4rem, 1.9vw, 2.2rem);
   --text-sm: clamp(1rem, 1.6vw, 1.9rem);
   --text-xs: clamp(0.8rem, 1.4vw, 1.6rem);
   --padding-btn: 1rem 2rem;
   --padding-input: 0.4rem;
+  --padding-mobile: 2rem;
+  --padding-desktop: 5rem;
   --flow-lg: 2rem;
   --flow-sm: 1rem;
 }

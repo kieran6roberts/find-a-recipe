@@ -3,18 +3,32 @@
   flex-direction: column;
 }
 
-.header {
+.header,
+.subHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.header {
   padding: var(--flow-lg) 0 0;
+  justify-content: space-between;
+}
+
+.subHeader {
+  justify-content: flex-start;
 }
 
 .name {
-  font-size: var(--text-xs);
+  font-size: var(--text-md);
   font-weight: 700;
   text-transform: uppercase;
   width: 80%;
+}
+
+.serve {
+  font-size: var(--text-sm);
+  text-transform: capitalize;
+  font-weight: 400;
 }
 
 .name:not:nth-of-type(1) {
@@ -55,16 +69,62 @@
   transform: translateY(-1.5rem);
 }
 
+.divider, 
+.dividerTitle {
+  height: 1px;
+  margin: var(--flow-sm) 0;
+}
+
+.dividerTitle {
+  width: 90%;
+  background-color: var(--primary-color);
+}
 
 .divider {
-  height: 1px;
-  width: 90%;
+  width: 45%;
   background-color: var(--light2);
-  margin: var(--flow-sm) 0;
+}
+
+.flexWrapper {
+  display: flex;
+  align-items: flex-start;
 }
 
 .image {
   width: 40%;
   max-width: 250px;
   object-fit: cover;
+}
+
+.ingredientHeader {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.ingredientList {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  list-style: inside;
+  text-transform: capitalize;
+  font-size: var(--text-xs);
+}
+
+.instructionHeader {
+  font-size: var(--text-xs);
+  margin-right: 1rem;
+  text-transform: uppercase;
+}
+
+.instructionList {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  font-size: var(--text-xs);
+  list-style: inside;
+}
+
+.instruction {
+  padding: var(--padding-input) 0;
 }

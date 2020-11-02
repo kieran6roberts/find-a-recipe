@@ -1,0 +1,42 @@
+.main {
+  padding: 4rem var(--padding-mobile);
+  text-align: center;
+}
+
+.main > * {
+  margin-bottom: var(--flow-lg);
+}
+
+.header {
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+}
+
+.info {
+  font-size: var(--text-sm);
+  text-transform: capitalize;
+}
+
+.link {
+  display: block;
+  width: 300px;
+  padding: var(--padding-btn);
+  margin: 0 auto;
+  border: 6px solid var(--primary-color);
+  background-color: var(--light1);
+  text-transform: uppercase;
+  color: var(--dark3);
+  transition: all 100ms ease;
+}
+
+.link:hover {
+  background-color: var(--light2);
+  color: var(--dark1);
+}
+
+@media only screen and (min-width: 700px ) {
+  .main {
+    padding: 8rem var(--padding-desktop);
+  }
+}
+

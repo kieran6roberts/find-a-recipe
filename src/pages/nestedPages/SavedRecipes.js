@@ -24,7 +24,10 @@ const SavedRecipes = () => {
         id={recipe.id}
         title={recipe.title}
         save={submitDeleteHandler}
-        image={recipe.image}/>)
+        image={recipe.image}
+        steps={recipe.analyzedInstructions[0].steps}
+        ready={recipe.readyInMinutes}
+        ingredients={recipe.extendedIngredients}/>)
       : <li>Empty</li>
       }
     </RecipeContainer>

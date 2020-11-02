@@ -26,6 +26,7 @@ const Form = () => {
   useEffect( () => {
     if (recipes) { 
       setSessionResults(recipes);
+      console.log(recipes);
       history.push({
         pathname: "/browse/results",
         state: {
@@ -37,7 +38,7 @@ const Form = () => {
 
   const fetchData = async (query) => {
     try {
-      const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=5&apiKey=${API_KEY}`);
+      const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=3&fillIngredients=true&addRecipeInformation=true&apiKey=${API_KEY}`);
       const { results } = await response.json();
       setRecipes(results);
     } catch (err) {

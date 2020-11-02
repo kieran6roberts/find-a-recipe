@@ -1,12 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import RecipeContainer from "../../components/RecipeContainer/RecipeContainer";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import { useStorage, useStorageUpdate } from "../../hooks/StorageContext";
 
 const Results = () => {
-  const location = useLocation();
-  console.log(location);
   const { sessionResults, localResults } = useStorage();
   const { setLocalResults } = useStorageUpdate();
 
@@ -15,6 +12,7 @@ const Results = () => {
   const submitSaveHandler = e => {
     const recipeID = e.currentTarget.closest("li").id;
     const match = findRecipeMatch(sessionResults, recipeID);
+
     if (!localResults) return setLocalResults(match);
     if (localResults.some( recipe => recipe.id === match[0].id)) return;
 
@@ -25,9 +23,11 @@ const Results = () => {
       }
   };
 
+  console.log(sessionResults);
+
+  
   return (
     <RecipeContainer>
-      <span>Search query was: </span>
       {sessionResults
       ? sessionResults.map( recipe => <RecipeCard 
         key={recipe.id}
@@ -35,7 +35,10 @@ const Results = () => {
         title={recipe.title} 
         image={recipe.image}
         save={submitSaveHandler}
-        icon="save" />)
+        icon="save"
+        steps={recipe.analyzedInstructions[0].steps}
+        ready={recipe.readyInMinutes}
+        ingredients={recipe.extendedIngredients} />)
       : <li>Empty</li>
       }
     </RecipeContainer>
