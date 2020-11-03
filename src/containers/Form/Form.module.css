@@ -1,24 +1,36 @@
+.container {
+  position: relative;
+  padding: 0.2rem;
+  margin: 0 2rem;
+  border-left: 1px solid var(--light2);
+  border-right: 1px solid var(--light2);
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
   height: 60vh;
-  width: 100vw;
+  width: 90%;
+  font-size: var(--text-xs);
 }
 
 .searchLabel {
-  font-size: var(--text-xs);
+  font-size: 0.9em;
+  padding: var(--flow-lg) 0;
   text-transform: capitalize;
-  margin-bottom: var(--flow-lg);
 }
 
 .searchInput {
-  font-size: var(--text-xs);
+  font-size: 0.8em;
   background-color: var(--light1);
   padding: var(--padding-input);
   margin-bottom: var(--flow-lg);
-  border: 1px solid var(--light3);
+  border: 2px solid var(--light3);
   transition: all 200ms ease-in-out;
+}
+
+.searchInput::placeholder {
+  color: var(--light3);
 }
 
 #name::-webkit-search-cancel-button{
@@ -34,13 +46,13 @@
 }
 
 .submit {
-  background-color: var(--light1);
+  background-color: var(--light3);
   color: var(--dark3);
-  width: 30%;
-  padding: var(--padding-btn);
-  border: 1px solid var(--light3);
+  width: 40%;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--light3);
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: not-allowed;
   transition: all 200ms ease;
 }
 
@@ -48,9 +60,46 @@
   background-color: var(--light2);
 }
 
+.valid {
+  background-color: var(--light1);
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  filter: brightness(1.5) contrast(1.25) hue-rotate(-100deg) sepia(0.44) ;
+}
+
 @media only screen and (min-width: 700px ) {
+  .container {
+    margin: 0 5rem;
+  }
+
   .form {
-    padding: 1rem 5rem;
-    width: 50VW;
+    width: 60%;
+  }
+
+  .image {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 1200px ) and (min-height: 800px) {
+  .image {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1800px ) and (min-height: 1200px) {
+  .image {
+    height: 500px;
+    width: 500px;
   }
 }

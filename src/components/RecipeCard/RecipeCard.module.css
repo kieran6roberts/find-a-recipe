@@ -15,7 +15,8 @@
 }
 
 .subHeader {
-  justify-content: flex-start;
+  justify-content: space-between;
+  background-color: var(--light1);
 }
 
 .name {
@@ -35,7 +36,8 @@
   padding-top: var(--flow-lg);
 }
 
-.btn {
+.btn,
+.btnList{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,9 +45,9 @@
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.5rem;
-  border-radius: 50%;
   border: none;
   transition: all 100ms ease-in;
+  background-color: var(--primary-color);
 }
 
 .btn:before {
@@ -60,13 +62,15 @@
   transition: all 100ms ease-in;
 }
 
-.btn:hover {
-  background-color: var(--primary-color);
-}
-
-.btn:hover:before {
+.btn:hover:before,
+.btnList:hover:before {
   opacity: 1;
   transform: translateY(-1.5rem);
+}
+
+/* save btn was pressed */
+.saved {
+  background-color: #f00;
 }
 
 .divider, 
@@ -76,12 +80,12 @@
 }
 
 .dividerTitle {
-  width: 90%;
+  width: 100%;
   background-color: var(--primary-color);
 }
 
 .divider {
-  width: 45%;
+  width: 100%;
   background-color: var(--light2);
 }
 
@@ -102,13 +106,20 @@
   margin-right: 1rem;
 }
 
-.ingredientList {
+.ingredientList,
+.instructionList {
   display: none;
   visibility: hidden;
   opacity: 0;
   list-style: inside;
   text-transform: capitalize;
   font-size: var(--text-xs);
+}
+/* open list when button clicked*/
+.open {
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .instructionHeader {
@@ -117,14 +128,7 @@
   text-transform: uppercase;
 }
 
-.instructionList {
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-  font-size: var(--text-xs);
-  list-style: inside;
-}
-
 .instruction {
   padding: var(--padding-input) 0;
 }
+

@@ -63,7 +63,7 @@
 }
 
 .active.link:before {
-  width: 100%;
+  background-color: var(--primary-color);
 }
 
 @media only screen and (min-width: 700px ) {

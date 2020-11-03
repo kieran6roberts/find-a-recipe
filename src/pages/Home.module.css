@@ -22,7 +22,7 @@
   width: 300px;
   padding: var(--padding-btn);
   margin: 0 auto;
-  border: 6px solid var(--primary-color);
+  border: 3px solid var(--primary-color);
   background-color: var(--light1);
   text-transform: uppercase;
   color: var(--dark3);

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import RecipeContainer from "../../components/RecipeContainer/RecipeContainer";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import { useStorage, useStorageUpdate } from "../../hooks/StorageContext";
+import classes from "./Results.module.css";
 
 const Results = () => {
   const { sessionResults, localResults } = useStorage();
+  const [ saveClass, setSaveClass] = useState(false);
   const { setLocalResults } = useStorageUpdate();
 
   const findRecipeMatch = (items, check) => [ items.find( item => item.id.toString() === check) ];
 
+  const toggleSaveClass = () => {
+    setSaveClass(!saveClass);
+  };
+
   const submitSaveHandler = e => {
+    toggleSaveClass();
     const recipeID = e.currentTarget.closest("li").id;
     const match = findRecipeMatch(sessionResults, recipeID);
 
@@ -21,6 +28,7 @@ const Results = () => {
     } catch (err) {
         console.error(err);
       }
+    toggleSaveClass();
   };
 
   console.log(sessionResults);
@@ -36,10 +44,11 @@ const Results = () => {
         image={recipe.image}
         save={submitSaveHandler}
         icon="save"
+        saveClass={saveClass}
         steps={recipe.analyzedInstructions[0].steps}
         ready={recipe.readyInMinutes}
         ingredients={recipe.extendedIngredients} />)
-      : <li>Empty</li>
+      : <li className={classes.emptyList}>results are empty</li>
       }
     </RecipeContainer>
   )

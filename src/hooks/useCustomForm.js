@@ -3,6 +3,7 @@ import { useState, useEffect }  from "react";
 const useCustomForm = ({ initValues, onSubmit }) => {
   const [ values, setValues ] = useState(initValues || {});
   const [ submit, setSubmit ] = useState(false);
+  const [ buttonValid, setButtonValid ] = useState(false);
 
   useEffect( () => {
     if (submit) {
@@ -15,6 +16,10 @@ const useCustomForm = ({ initValues, onSubmit }) => {
     const { target } = e;
     const { value } = target;
     setValues({ ...values, name: value });
+
+    if(!value) setButtonValid(false);
+    if (value) setButtonValid(true);
+
   };
   
   const submitFormHandler = e => {
@@ -25,6 +30,7 @@ const useCustomForm = ({ initValues, onSubmit }) => {
 
   return {
     values,
+    buttonValid,
     changeFormHandler,
     submitFormHandler
   }

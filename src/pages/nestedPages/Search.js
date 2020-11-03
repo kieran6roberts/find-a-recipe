@@ -3,7 +3,6 @@ import Form from "../../containers/Form/Form";
 
 const Search = () => {
   return (
-    
     <Form />
   )
 };
