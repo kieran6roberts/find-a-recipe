@@ -50,28 +50,10 @@
   background-color: var(--primary-color);
 }
 
-.btn:before {
-  content: "save";
-  position: absolute;
-  font-size: var(--text-xs);
-  text-align: center;
-  width: 2.5rem;
-  top: 0;
-  opacity: 0;
-  transform: translateY(0rem);
-  transition: all 100ms ease-in;
-}
-
-.btn:hover:before,
-.btnList:hover:before {
-  opacity: 1;
-  transform: translateY(-1.5rem);
-}
-
-/* save btn was pressed */
-.saved {
+.btn:active {
   background-color: #f00;
 }
+
 
 .divider, 
 .dividerTitle {

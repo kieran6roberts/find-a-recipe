@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaHeart, FaTrash, FaArrowDown } from "react-icons/fa";
 import classes from "./RecipeCard.module.css";
 
-const RecipeCard = ({ id, title, image, save, icon, steps, ready, ingredients, saveClass }) => {
+const RecipeCard = ({ id, title, image, save, icon, steps, ready, ingredients }) => {
   const [ openIngredients, setOpenIngredients ] = useState(false);
   const [ openInstructions, setOpenInstructions ] = useState(false);
 
@@ -12,8 +12,8 @@ const RecipeCard = ({ id, title, image, save, icon, steps, ready, ingredients, s
         <h2 className={classes.name}>{title} <span className={classes.serve}>(time to serve: {ready})</span></h2>
         <button onClick={save} className={classes.btn}>
           {icon === "save"
-          ? <FaHeart color={saveClass ? "f00" : "fff"} />
-          : <FaTrash color="#333" />}
+          ? <FaHeart color="fff" />
+          : <FaTrash color="#fff" />}
         </button>
       </div>
 

@@ -1,10 +1,26 @@
-.main {
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   padding: 4rem var(--padding-mobile);
   text-align: center;
 }
 
-.main > * {
+.home > * {
   margin-bottom: var(--flow-lg);
+}
+
+.chefHatImg {
+  position: absolute;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  filter: opacity(10%);
 }
 
 .header {
@@ -14,7 +30,7 @@
 
 .info {
   font-size: var(--text-sm);
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .link {
@@ -33,10 +49,3 @@
   background-color: var(--light2);
   color: var(--dark1);
 }
-
-@media only screen and (min-width: 700px ) {
-  .main {
-    padding: 8rem var(--padding-desktop);
-  }
-}
-

@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import classes from "./Home.module.css";
+import chefHatImg from "../assets/chef-hat.png";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <main className={classes.main}>
+      <section className={classes.home}>
+      <img src={chefHatImg} className={classes.chefHatImg} alt="man sitting on chef hat" />
+
         <h1 className={classes.header}>
           find a recipe
         </h1>
@@ -17,7 +20,7 @@ const Home = () => {
         className={classes.link}>
           find your next recipe
         </Link>
-      </main>
+      </section>
     </>
   )
 };

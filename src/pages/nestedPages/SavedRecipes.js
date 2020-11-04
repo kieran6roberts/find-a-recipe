@@ -2,6 +2,7 @@ import React from "react";
 import RecipeContainer from "../../components/RecipeContainer/RecipeContainer";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import { useStorage, useStorageUpdate } from "../../hooks/StorageContext";
+import classes from "./SavedRecipes.module.css";
 
 const SavedRecipes = () => {
   const { localResults } = useStorage();
@@ -18,7 +19,7 @@ const SavedRecipes = () => {
 
   return (
     <RecipeContainer>
-      {localResults
+      {localResults.length !== 0
       ? localResults.map( recipe => <RecipeCard 
         key={recipe.id}
         id={recipe.id}
@@ -28,7 +29,7 @@ const SavedRecipes = () => {
         steps={recipe.analyzedInstructions[0].steps}
         ready={recipe.readyInMinutes}
         ingredients={recipe.extendedIngredients}/>)
-      : <li>Empty</li>
+      : <li className={classes.emptyList}>results are empty</li>
       }
     </RecipeContainer>
   )

@@ -15,6 +15,7 @@
   --padding-input: 0.4rem;
   --padding-mobile: 2rem;
   --padding-desktop: 5rem;
+  --flow-xl: 4rem;
   --flow-lg: 2rem;
   --flow-sm: 1rem;
 }
@@ -61,6 +62,12 @@ html {
 
 ul {
   list-style: none;
+}
+
+p, 
+span, 
+div {
+  line-height:1.8;
 }
 
 a {

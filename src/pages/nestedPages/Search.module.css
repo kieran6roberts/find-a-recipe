@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  padding: 0.2rem;
+  margin: 0 2rem;
+  border-left: 1px solid var(--light2);
+  border-right: 1px solid var(--light2);
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: var(--flow-lg) 0 0;
+}
+
+.image {
+  position: absolute;
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  filter: opacity(10%);
+}
+
+@media only screen and (min-width: 700px) {
+  .container {
+    margin: 0 5rem;
+  }
+}
