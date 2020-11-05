@@ -36,25 +36,6 @@
   padding-top: var(--flow-lg);
 }
 
-.btn,
-.btnList{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0.5rem;
-  border: none;
-  transition: all 100ms ease-in;
-  background-color: var(--primary-color);
-}
-
-.btn:active {
-  background-color: #f00;
-}
-
-
 .divider, 
 .dividerTitle {
   height: 1px;
@@ -69,11 +50,6 @@
 .divider {
   width: 100%;
   background-color: var(--light2);
-}
-
-.flexWrapper {
-  display: flex;
-  align-items: flex-start;
 }
 
 .image {

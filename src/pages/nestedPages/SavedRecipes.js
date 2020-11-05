@@ -25,6 +25,7 @@ const SavedRecipes = () => {
         id={recipe.id}
         title={recipe.title}
         save={submitDeleteHandler}
+        deleteIcon
         image={recipe.image}
         steps={recipe.analyzedInstructions[0].steps}
         ready={recipe.readyInMinutes}

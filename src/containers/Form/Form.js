@@ -49,7 +49,7 @@ const Form = () => {
 
   return (
       <form  
-        onSubmit={submitFormHandler}
+        onSubmit={() => submitFormHandler()}
         className={classes.form}>
         <label 
           htmlFor="name" 
@@ -59,7 +59,7 @@ const Form = () => {
         <input 
           id="name"
           name="search"
-          onChange={changeFormHandler}
+          onChange={() => changeFormHandler()}
           value={values.name}
           type="search"
           placeholder="thai red curry, pizza etc."

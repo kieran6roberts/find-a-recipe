@@ -32,8 +32,7 @@ const Results = () => {
         id={recipe.id}
         title={recipe.title} 
         image={recipe.image}
-        save={submitSaveHandler}
-        icon="save"
+        save={() => submitSaveHandler()}
         steps={recipe.analyzedInstructions[0].steps}
         ready={recipe.readyInMinutes}
         ingredients={recipe.extendedIngredients} />)
