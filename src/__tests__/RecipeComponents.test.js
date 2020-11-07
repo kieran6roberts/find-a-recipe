@@ -47,20 +47,20 @@ describe("<RecipeCard /> that outputs recipe information", () => {
     });
 
     test("click save event", () => {
-      const handleSaveClick = jest.fn();
+      const onClick = jest.fn();
       render(
         <ButtonProvider>
           <RecipeCard
             ingredients={[ {name: "test 1"}, {name: "test2"}]}
             steps={[ {step: "test1", number: "test1"}, {step: "test2", number: "test2"} ]}
-            save={() => handleSaveClick()}
+            save={onClick}
             icon="save">
             </RecipeCard>
         </ButtonProvider>);
 
       const buttons = screen.queryAllByRole("button")
       fireEvent.click(buttons[0]);
-      expect(handleSaveClick).toHaveBeenCalledTimes(1);
+      expect(onClick).toHaveBeenCalledTimes(1);
 
     });
 });

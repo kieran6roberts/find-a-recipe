@@ -5,15 +5,10 @@ import { useStorageUpdate } from "../../hooks/StorageContext";
 import { API_KEY, BASE_URL } from "../../settings";
 import classes from "./Form.module.css";
 
-const Form = () => {
+const Form = ({ initValues }) => {
   const history = useHistory();
   const [ recipes, setRecipes ] = useState("");
   const { setSessionResults } = useStorageUpdate();
-  
-  //init values for form inputs
-  const initValues = {
-    name: ""
-  };
 
   const { 
     values,
@@ -41,15 +36,16 @@ const Form = () => {
     try {
       const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=3&fillIngredients=true&addRecipeInformation=true&apiKey=${API_KEY}`);
       const { results } = await response.json();
-      setRecipes(results);
+      return setRecipes(results);
     } catch (err) {
       console.log(err);
+      return null;
     }
   }; 
 
   return (
       <form  
-        onSubmit={() => submitFormHandler()}
+        onSubmit={submitFormHandler}
         className={classes.form}>
         <label 
           htmlFor="name" 
@@ -59,12 +55,17 @@ const Form = () => {
         <input 
           id="name"
           name="search"
-          onChange={() => changeFormHandler()}
+          onChange={changeFormHandler}
           value={values.name}
           type="search"
           placeholder="thai red curry, pizza etc."
           className={classes.searchInput} />
-        <input type="submit" className={`${classes.submit} ${buttonValid ? classes.valid : ""}`} value="Submit" />
+        <input 
+        type="submit" 
+        className={`${classes.submit} 
+        ${buttonValid ? classes.valid : ""}`} 
+        value="Submit" 
+        disabled={buttonValid}/>
       </form>
   )
 };

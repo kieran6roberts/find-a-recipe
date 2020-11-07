@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.4.2",
     "autoprefixer": "^10.0.1",
     "postcss-import": "^13.0.0"
   }

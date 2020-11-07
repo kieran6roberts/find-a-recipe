@@ -1,6 +1,6 @@
 import { useState, useEffect }  from "react";
 
-const useCustomForm = ({ initValues, onSubmit }) => {
+const useCustomForm = ({ initValues = { name: "" }, onSubmit }) => {
   const [ values, setValues ] = useState(initValues || {});
   const [ submit, setSubmit ] = useState(false);
   const [ buttonValid, setButtonValid ] = useState(false);

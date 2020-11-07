@@ -7,7 +7,9 @@ const Search = () => {
   return (
     <section className={classes.container} id="search">  
       <h2 className={classes.title}>find your recipes</h2>
-      <Form />
+      <Form 
+      initValues={{ name: "" }}
+      />
       <img
       src={eating}
       className={classes.image}
