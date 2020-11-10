@@ -19,7 +19,7 @@ const SavedRecipes = () => {
 
   return (
     <RecipeContainer>
-      {localResults.length !== 0
+      {localResults
       ? localResults.map( recipe => <RecipeCard 
         key={recipe.id}
         id={recipe.id}

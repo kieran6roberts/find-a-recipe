@@ -4,7 +4,7 @@ import Form from "../containers/Form/Form";
 import StorageProvider from "../hooks/StorageContext";
 
 beforeEach( () => {
-  jest.clearAllMocks()
+  jest.clearAllMocks();
 })
 
 describe("<Form />", () => {
@@ -21,15 +21,13 @@ describe("<Form />", () => {
   test("submit and input change events", async () => {
       const { getByDisplayValue, getByPlaceholderText }  = render(
       <StorageProvider>
-        <Form 
-        initValues={{ name: ""}}
-         />
+        <Form/>
       </StorageProvider>);
 
       const input = getByPlaceholderText("thai red curry, pizza etc.");
       const submit = getByDisplayValue("Submit");
 
-      expect(submit).toBeDisabled
+      expect(submit).toBeDisabled();
 
       // input change
       fireEvent.change(input, {

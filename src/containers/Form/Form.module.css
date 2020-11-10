@@ -45,6 +45,7 @@
   border: 2px solid var(--light3);
   text-transform: uppercase;
   cursor: not-allowed;
+  pointer-events: none;
   transition: all 200ms ease;
 }
 

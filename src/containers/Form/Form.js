@@ -5,10 +5,14 @@ import { useStorageUpdate } from "../../hooks/StorageContext";
 import { API_KEY, BASE_URL } from "../../settings";
 import classes from "./Form.module.css";
 
-const Form = ({ initValues }) => {
+const Form = () => {
   const history = useHistory();
   const [ recipes, setRecipes ] = useState("");
   const { setSessionResults } = useStorageUpdate();
+
+  const initValues = {
+    name: ""
+  };
 
   const { 
     values,
@@ -22,7 +26,6 @@ const Form = ({ initValues }) => {
   useEffect( () => {
     if (recipes) { 
       setSessionResults(recipes);
-      console.log(recipes);
       history.push({
         pathname: "/browse/results",
         state: {
@@ -33,6 +36,7 @@ const Form = ({ initValues }) => {
   })
 
   const fetchData = async (query) => {
+    console.log("fetch");
     try {
       const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=3&fillIngredients=true&addRecipeInformation=true&apiKey=${API_KEY}`);
       const { results } = await response.json();
@@ -63,7 +67,7 @@ const Form = ({ initValues }) => {
         <input 
         type="submit" 
         className={`${classes.submit} 
-        ${buttonValid ? classes.valid : ""}`} 
+        ${!buttonValid ? classes.valid : ""}`} 
         value="Submit" 
         disabled={buttonValid}/>
       </form>
