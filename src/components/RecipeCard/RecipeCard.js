@@ -5,8 +5,8 @@ import Button from "../Button/Button";
 import classes from "./RecipeCard.module.css";
 
 const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredients }) => {
-  const { openIngredients, openInstructions } = useButton();
-  const { toggler, setOpenIngredients, setOpenInstructions } = useButtonUpdate();
+  const { activeItem, openIngredients, openInstructions } = useButton();
+  const { toggleActiveItem, toggleOpenIngredients, toggleOpenInstructions } = useButtonUpdate();
 
   return (
     <li key={id}  className={classes.item} id={id}>
@@ -28,12 +28,19 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
 
       <div className={classes.subHeader}>
         <h3 className={classes.ingredientHeader}>ingredients</h3>
-        <Button onClickFunc={() => toggler(setOpenIngredients, openIngredients)}>
+        <Button onClickFunc={() => {
+          toggleActiveItem(id);
+          toggleOpenIngredients();
+        }}>
           <FaArrowDown color="fff"/>
         </Button>
       </div>
 
-      <ul className={`${classes.ingredientList} ${openIngredients ? classes.open : ""}`}>
+      <ul className={`${classes.ingredientList} 
+                      ${openIngredients &&
+                        activeItem === id &&
+                        classes.open}`}>
+
         {ingredients
         ?  ingredients.map( (ingredient, index) => <li key={index} className={classes.ingredients}>{ingredient.name}, </li>)
         : <span>Ingredients not available for this recipe</span>
@@ -44,12 +51,18 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
 
       <div className={classes.subHeader}>
         <h3 className={classes.instructionHeader}>instructions</h3>
-        <Button onClickFunc={() => toggler(setOpenInstructions, openInstructions)}>
+        <Button onClickFunc={() => {
+          toggleActiveItem(id);
+          toggleOpenInstructions();
+        }}>
           <FaArrowDown color="fff"/>
         </Button>
       </div>
 
-      <ul className={`${classes.instructionList} ${openInstructions ? classes.open : ""}`}>
+      <ul className={`${classes.instructionList} 
+                      ${openInstructions &&
+                        activeItem === id &&
+                        classes.open}`}>
         {steps
         ?  steps.map( step => <li key={step.number} className={classes.instruction}>{step.step}</li>)
         : <span>No instructions for this recipe</span>

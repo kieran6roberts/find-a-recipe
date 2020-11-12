@@ -9,13 +9,15 @@ export const useButtonUpdate = () => useContext(ButtonUpdateContext);
 const ButtonProvider = ({ children }) => {
   const [ openIngredients, setOpenIngredients ] = useState(false);
   const [ openInstructions, setOpenInstructions ] = useState(false);
-  const [ savedClass, setSavedClass ] = useState(false);
+  const [ activeItem, setActiveItem ] = useState("");
 
-  const toggler = ( func, value) => func(!value);
+  const toggleOpenIngredients = () => setOpenIngredients(!openIngredients);
+  const toggleOpenInstructions = () => setOpenInstructions(!openInstructions);
+  const toggleActiveItem = (id) => setActiveItem(id);
 
   return (
-    <ButtonContext.Provider value={{ openIngredients, openInstructions, savedClass}}>
-        <ButtonUpdateContext.Provider value={{ toggler, setOpenIngredients, setOpenInstructions, setSavedClass }}>
+    <ButtonContext.Provider value={{ openIngredients, openInstructions, activeItem}}>
+        <ButtonUpdateContext.Provider value={{ toggleActiveItem, toggleOpenIngredients, toggleOpenInstructions}}>
           {children}
         </ButtonUpdateContext.Provider>
       </ButtonContext.Provider>
