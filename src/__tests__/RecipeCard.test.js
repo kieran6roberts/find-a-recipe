@@ -1,18 +1,9 @@
 import React from 'react';
 import { screen, render, fireEvent } from "@testing-library/react";
-import RecipeContainer from "../components/RecipeContainer/RecipeContainer";
+import renderer from "react-test-renderer";
 import RecipeCard from "../components/RecipeCard/RecipeCard";
 import ButtonProvider from "../hooks/ButtonContext";
 
-// Recipe Container
-describe("<RecipeContainer /> that wraps children", () => {
-  test("Recipe container renders children", () => {
-    render(<RecipeContainer><li>Test child</li></RecipeContainer>);
-    expect(screen.getByText(/Test child/)).toBeInTheDocument();
-  });
-});
-
-//Recipe Card
 describe("<RecipeCard /> that outputs recipe information", () => {
   test("check empty prop returns no information text content", () => {
     render(
@@ -23,6 +14,23 @@ describe("<RecipeCard /> that outputs recipe information", () => {
 
     expect(screen.getByText("Ingredients not available for this recipe")).toBeInTheDocument();
     expect(screen.getByText("No instructions for this recipe")).toBeInTheDocument();
+  });
+  test("snapshot", () => {
+    const tree = renderer.create(
+      <ButtonProvider>
+      <RecipeCard
+      id="1"
+      title="test title"
+      image="img.test"
+      save
+      deleteIcon
+      steps={[ {step: "test1", number: "test1"}, {step: "test2", number: "test2"} ]}
+      ready="45 minutes"
+      ingredients={[ {name: "test 1"}, {name: "test2"}]}
+      ></RecipeCard>
+    </ButtonProvider>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
   test("check document text based on props", () => {
       render(

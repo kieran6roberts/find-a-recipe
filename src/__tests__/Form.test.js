@@ -18,26 +18,11 @@ describe("<Form />", () => {
     expect(getByLabelText("keywords:")).toBeInTheDocument();
   });
 
-  test("submit and input change events", async () => {
+  test("fetch on submit function", async () => {
       const { getByDisplayValue, getByPlaceholderText }  = render(
       <StorageProvider>
         <Form/>
       </StorageProvider>);
-
-      const input = getByPlaceholderText("thai red curry, pizza etc.");
-      const submit = getByDisplayValue("Submit");
-
-      expect(submit).toBeDisabled();
-
-      // input change
-      fireEvent.change(input, {
-        target: {
-          value: "pizza"
-        }
-      });
-
-      //hook is updating input correctly
-      expect(input.value).toBe("pizza");
 
       jest.spyOn(global, "fetch").mockImplementation( () => {
         Promise.resolve({
@@ -45,12 +30,18 @@ describe("<Form />", () => {
         })
       });
 
-      //submit
+      const input = getByPlaceholderText("thai red curry, pizza etc.");
+      const submit = getByDisplayValue("Submit");
+
       await fireEvent.submit(submit);
-      //fetch function is called
       expect(window.fetch).toHaveBeenCalledTimes(1);
-      //input is reset
       expect(input.value).toBeFalsy();
+      expect(submit).toBeDisabled();
+
+      await fireEvent.submit(submit);
+      await fireEvent.submit(submit);
+      expect(window.fetch).toHaveBeenCalledTimes(3);
+
 
       global.fetch.mockRestore();
   });

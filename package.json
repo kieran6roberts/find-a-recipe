@@ -16,7 +16,6 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "postcss": "postcss --use autoprefixer -o src/assets/main.css *.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

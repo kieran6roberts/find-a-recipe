@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./PageNav.module.css";
 
-const PageNav = ({ header, url, links = []}) => {
+const PageNav = ({ header = "Find a recipe", url, links = []}) => {
 
     const listEls = links.map( link => {
       return (

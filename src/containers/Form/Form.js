@@ -36,7 +36,6 @@ const Form = () => {
   })
 
   const fetchData = async (query) => {
-    console.log("fetch");
     try {
       const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=3&fillIngredients=true&addRecipeInformation=true&apiKey=${API_KEY}`);
       const { results } = await response.json();

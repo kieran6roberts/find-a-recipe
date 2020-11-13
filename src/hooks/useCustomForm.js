@@ -26,7 +26,6 @@ const useCustomForm = ({ initValues, onSubmit }) => {
   const submitFormHandler = e => {
     e.preventDefault();
     setSubmit(true);
-    console.log("submit");
     onSubmit(values);
   };
 
