@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 14vh;
-  padding: 0 var(--padding-mobile);
+  padding: 0 var(--space-md);
   border-bottom: 1px solid var(--light2);
 }
 
@@ -31,7 +31,6 @@
   position: relative;
   color: var(--dark3);
   font-size: var(--text-xs);
-  text-align: center;
   height: 100%;
   width: 100%;
   transition: all 200ms ease;
@@ -68,6 +67,6 @@
 
 @media only screen and (min-width: 700px ) {
   .nav {
-    padding: 0rem var(--padding-desktop);
+    padding: 0rem var(--space-lg);
   }
 }

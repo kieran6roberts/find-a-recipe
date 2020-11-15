@@ -10,7 +10,7 @@
 }
 
 .header {
-  padding: var(--flow-lg) 0 0;
+  padding: var(--space-md) 0 0;
   justify-content: space-between;
 }
 
@@ -33,13 +33,13 @@
 }
 
 .name:not:nth-of-type(1) {
-  padding-top: var(--flow-lg);
+  padding-top: var(--space-md);
 }
 
 .divider, 
 .dividerTitle {
   height: 1px;
-  margin: var(--flow-sm) 0;
+  margin: var(--space-sm) 0;
 }
 
 .dividerTitle {
@@ -87,6 +87,6 @@
 }
 
 .instruction {
-  padding: var(--padding-input) 0;
+  padding: var(--space-sm) 0;
 }
 

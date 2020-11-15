@@ -1,7 +1,7 @@
 import React from "react";
-import RecipeContainer from "../../components/RecipeContainer/RecipeContainer";
-import RecipeCard from "../../components/RecipeCard/RecipeCard";
-import { useStorage, useStorageUpdate } from "../../hooks/StorageContext";
+import RecipeContainer from "../../../components/RecipeContainer/RecipeContainer";
+import RecipeCard from "../../../components/RecipeCard/RecipeCard";
+import { useStorage, useStorageUpdate } from "../../../hooks/StorageContext";
 import classes from "./SavedRecipes.module.css";
 
 const SavedRecipes = () => {

@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import PageNav from "../components/PageNav/PageNav";
+import Navbar from "../../components/Navbar/Navbar";
+import PageNav from "../../components/PageNav/PageNav";
 import { useRouteMatch, Switch, Route} from "react-router-dom";
-import SavedRecipes from "./nestedPages/SavedRecipes";
+import SavedRecipes from "./SavedRecipes/SavedRecipes";
 
 const Recipes = () => {
   const { path, url } = useRouteMatch();

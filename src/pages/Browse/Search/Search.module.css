@@ -4,18 +4,20 @@
   margin: 0 2rem;
   border-left: 1px solid var(--light2);
   border-right: 1px solid var(--light2);
+  height: 90vh;
 }
 
 .title {
+  margin-bottom: var(--space-md);
   font-size: var(--text-lg);
   font-weight: 400;
   text-transform: uppercase;
-  padding: var(--flow-lg) 0 0;
+  padding: var(--space-md) 0 0;
 }
 
 .image {
   position: absolute;
-  max-height: 300px;
+  max-height: 40vh;
   width: 100%;
   object-fit: cover;
   z-index: -1;

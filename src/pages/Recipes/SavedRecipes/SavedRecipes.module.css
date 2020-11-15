@@ -1,6 +1,6 @@
 .emptyList {
   font-size: var(--text-md);
   text-align: center;
-  padding: 4rem var(--padding-mobile);
+  padding: 4rem var(--space-md);
   text-transform: capitalize;
 }

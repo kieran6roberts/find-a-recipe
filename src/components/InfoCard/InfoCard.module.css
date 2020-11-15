@@ -1,0 +1,25 @@
+.info {
+  padding: var(--space-sm) 0;
+  font-size: var(--text-sm);
+  text-transform: capitalize;
+}
+
+.link {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 700px) {
+  .info {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .flexItem {
+    flex: 1;
+  }
+  .flexItem > * {
+    margin-bottom: var(--space-md);
+  }
+}

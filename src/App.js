@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Browse from "./pages/Browse";
-import Recipes from "./pages/Recipes";
-import Home from "./pages/Home";
+import Browse from "./pages/Browse/Browse";
+import Recipes from "./pages/Recipes/Recipes";
+import Home from "./pages/Home/Home";
 import StorageProvider from "./hooks/StorageContext";
 import ButtonProvider from "./hooks/ButtonContext";
 

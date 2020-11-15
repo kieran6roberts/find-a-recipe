@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 10vh;
-  padding: 1rem var(--padding-mobile);
+  padding: 1rem var(--space-md);
   box-shadow: inset 0px 0px 5px var(--light2);
 }
 
@@ -37,7 +37,7 @@
 
 @media only screen and (min-width: 700px ) {
   .nav {
-    padding: 1rem var(--padding-desktop);
+    padding: 1rem var(--space-lg);
   }
 
   .title {
@@ -50,5 +50,11 @@
 
   .image {
     margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .marginLeft {
+    margin-left: var(--space-lg);
   }
 }

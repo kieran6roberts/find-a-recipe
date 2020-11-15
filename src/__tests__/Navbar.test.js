@@ -1,4 +1,3 @@
-import Button from "../components/Button/Button";
 import { render, screen} from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";

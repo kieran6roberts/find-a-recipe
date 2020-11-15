@@ -1,0 +1,5 @@
+.header {
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-size: var(--text-md);
+}

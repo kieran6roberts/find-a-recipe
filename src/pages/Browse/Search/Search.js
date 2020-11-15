@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "../../containers/Form/Form";
-import eating from "../../assets/eating.png";
+import Form from "../../../containers/Form/Form";
+import eating from "../../../assets/eating.png";
 import classes from "./Search.module.css";
 
 const Search = () => {
