@@ -8,6 +8,8 @@
 # api info
 src/settings.js
 
+env.local
+
 # testing
 /coverage
 

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import useCustomForm from "../../hooks/useCustomForm";
 import { useStoreUpdate } from "../../hooks/StorageContext";
 import classes from "./Form.module.css";
+const { API_KEY, BASE_URL } = process.env;
 
 const Form = () => {
   const history = useHistory();
@@ -36,9 +37,7 @@ const Form = () => {
 
   const fetchData = async (query) => {
     try {
-      const response = await fetch(`${process.env.BASE_URL}
-      /recipes/complexSearch?query=${query}
-      &number=25&fillIngredients=true&addRecipeInformation=true&apiKey=${process.env.API_KEY}`);
+      const response = await fetch(`${BASE_URL}/recipes/complexSearch?query=${query}&number=25&fillIngredients=true&addRecipeInformation=true&apiKey=${API_KEY}`);
       const { results } = await response.json();
       return setRecipes(results);
     } catch (err) {
