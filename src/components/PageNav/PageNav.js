@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./PageNav.module.css";
+import PropTypes from 'prop-types';
 
-const PageNav = ({ header = "Find a recipe", url, links = []}) => {
+const PageNav = ({ header = "Find a Recipe", url, links = [] }) => {
 
     const listEls = links.map( link => {
       return (
@@ -25,6 +26,12 @@ const PageNav = ({ header = "Find a recipe", url, links = []}) => {
       </ul>
     </nav>
   )
+};
+
+PageNav.propTypes = {
+  header: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  links: PropTypes.array
 };
 
 export default PageNav;

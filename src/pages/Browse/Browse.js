@@ -39,8 +39,13 @@ const Browse = () => {
       header="Browse"
       url={url} />
       {pathname === "/browse" &&
-        <section className={classes.container} id="browse">
-          <img src={listImg} className={classes.listImg} alt="recipe list illustration" />
+        <section 
+        className={classes.container} 
+        id="browse">
+          <img 
+          src={listImg} 
+          className={classes.listImg} 
+          alt="recipe list illustration" />
           <InfoCard 
           title="1. Search from thousands of recipes"
           srcSet={`${searchImg500} 500w,

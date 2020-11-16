@@ -3,14 +3,6 @@ import { MemoryRouter } from "react-router-dom";
 import PageNav from "../components/PageNav/PageNav";
 
 describe("<PageNav />", () => {
-    test("render", () => {
-        render(
-            <MemoryRouter>
-                <PageNav />
-            </MemoryRouter>
-        )
-        expect(screen.getByText("Find a recipe")).toBeInTheDocument();
-    });
     test("render with props", () => {
         const testLinks = [
             {

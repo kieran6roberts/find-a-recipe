@@ -26,7 +26,7 @@ const Results = () => {
 
   return (
     <RecipeContainer>
-      {storedSession.length > 0
+      {storedSession
       ? storedSession.map( recipe => <RecipeCard 
         key={recipe.id}
         id={recipe.id}

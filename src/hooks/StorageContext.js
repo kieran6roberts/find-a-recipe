@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from "react";
 import useStorage from "./useStorage";
+import PropTypes from 'prop-types';
 
 const StorageContext = createContext();
 const StorageUpdateContext = createContext();
@@ -22,6 +23,10 @@ const StorageProvider = ({ children }) => {
       </StorageUpdateContext.Provider>
     </StorageContext.Provider>
   )
+};
+
+StorageProvider.propTypes = {
+  children: PropTypes.element.isRequired
 };
 
 export default StorageProvider;

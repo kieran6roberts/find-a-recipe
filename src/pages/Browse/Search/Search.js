@@ -5,7 +5,9 @@ import classes from "./Search.module.css";
 
 const Search = () => {
   return (
-    <section className={classes.container} id="search">  
+    <section 
+    className={classes.container} 
+    id="search">  
       <h2 className={classes.title}>find your recipes</h2>
       <Form />
       <img

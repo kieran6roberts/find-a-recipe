@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import PropTypes from 'prop-types';
 
 const ButtonContext = createContext();
 const ButtonUpdateContext = createContext();
@@ -23,5 +24,9 @@ const ButtonProvider = ({ children }) => {
       </ButtonContext.Provider>
   )
 }; 
+
+ButtonProvider.propTypes = {
+  children: PropTypes.element.isRequired
+};
 
 export default ButtonProvider;

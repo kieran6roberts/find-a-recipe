@@ -10,13 +10,13 @@ const App = () => {
     <StorageProvider>
       <ButtonProvider>
         <Router>
-          <Switch>
-            <div className="App">
+          <div className="App">
+            <Switch>
               <Route path="/" component={Home} exact />
               <Route path="/browse" component={Browse} />
               <Route path="/recipes" component={Recipes} />
-            </div>
-          </Switch>
+            </Switch>
+          </div>
         </Router>
       </ButtonProvider>
     </StorageProvider>

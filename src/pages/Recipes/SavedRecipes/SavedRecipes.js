@@ -19,7 +19,7 @@ const SavedRecipes = () => {
 
   return (
     <RecipeContainer>
-      {storedLocal.length > 0
+      {storedLocal
       ? storedLocal.map( recipe => <RecipeCard 
         key={recipe.id}
         id={recipe.id}

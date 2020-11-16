@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const useStorage = (storageKey, initialValue) => {
   const init = type => {
@@ -32,6 +33,10 @@ const useStorage = (storageKey, initialValue) => {
       }
   };
   return [ storedSession, storedLocal, setValue ];
+};
+
+useStorage.propTypes = {
+  storageKey: PropTypes.string.isRequired,
 };
 
 export default useStorage;

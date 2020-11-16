@@ -23,7 +23,7 @@ exports[`<RecipeCard /> that outputs recipe information snapshot 1`] = `
     </h2>
     <button
       className="btn"
-      onClick={true}
+      onClick={[Function]}
     >
       <svg
         className="icon"

@@ -3,6 +3,7 @@ import { FaHeart, FaTrash, FaArrowDown } from "react-icons/fa";
 import { useButton, useButtonUpdate } from "../../hooks/ButtonContext";
 import Button from "../Button/Button";
 import classes from "./RecipeCard.module.css";
+import PropTypes from 'prop-types';
 
 const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredients }) => {
   const { activeItem, openIngredients, openInstructions } = useButton();
@@ -70,6 +71,15 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
       </ul>
     </li>
   )
+};
+
+RecipeCard.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  image: PropTypes.string,
+  steps: PropTypes.array,
+  ready: PropTypes.number,
+  ingredients: PropTypes.array
 };
 
 export default RecipeCard;

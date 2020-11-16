@@ -1,4 +1,5 @@
 import { useState, useEffect }  from "react";
+import PropTypes from "prop-types";
 
 const useCustomForm = ({ initValues, onSubmit }) => {
   const [ values, setValues ] = useState(initValues || {});
@@ -35,6 +36,11 @@ const useCustomForm = ({ initValues, onSubmit }) => {
     changeFormHandler,
     submitFormHandler
   }
+};
+
+useCustomForm.propTypes = {
+  initValues: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default useCustomForm;

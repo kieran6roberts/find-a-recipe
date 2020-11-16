@@ -22,7 +22,7 @@ describe("<RecipeCard /> that outputs recipe information", () => {
       id="1"
       title="test title"
       image="img.test"
-      save
+      save={jest.fn()}
       deleteIcon
       steps={[ {step: "test1", number: "test1"}, {step: "test2", number: "test2"} ]}
       ready="45 minutes"
