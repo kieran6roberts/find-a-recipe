@@ -6,16 +6,11 @@
   border-right: 1px solid var(--light2);
 }
 
-.searchImg {
-  height: 105px;
-  width: 250px;
-  border: 2px solid var(--primary-color);
-}
-
+.searchImg,
 .resultsImg {
-  height: 121px;
-  width: 250px;
-  border: 2px solid var(--primary-color);
+  max-width: 90%;
+  border: 3px solid var(--light3);
+  margin-bottom: var(--space-lg);
 }
 
 .listImg {
@@ -29,43 +24,9 @@
   filter: opacity(10%);
 }
 
-@media only screen and (min-width: 500px) {
-  .searchImg {
-    height: 168px;
-    width: 400px;
-  }
-  
-  .resultsImg {
-    height: 194px;
-    width: 400px;
-  }
-}
-
 @media only screen and (min-width: 700px) {
   .container {
     margin: 0 5rem;
-  }
-
-  .searchImg {
-    height: 210px;
-    width: 500px;
-  }
-  
-  .resultsImg {
-    height: 242px;
-    width: 500px;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .searchImg {
-    height: 294px;
-    width: 700px;
-  }
-  
-  .resultsImg {
-    height: 339px;
-    width: 700px;
   }
 }
 

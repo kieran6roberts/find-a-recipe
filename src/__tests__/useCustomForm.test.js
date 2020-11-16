@@ -3,10 +3,6 @@ import { fireEvent, render } from "@testing-library/react";
 import Form from "../containers/Form/Form";
 import StorageProvider from "../hooks/StorageContext";
 
-beforeEach( () => {
-  jest.clearAllMocks();
-})
-
 describe("UseCustomForm hook", () => {
   test("test hook using <Form />", () => {
     render(

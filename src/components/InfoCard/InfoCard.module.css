@@ -1,7 +1,6 @@
 .info {
-  padding: var(--space-sm) 0;
+  padding: var(--space-md) 0;
   font-size: var(--text-sm);
-  text-transform: capitalize;
 }
 
 .link {

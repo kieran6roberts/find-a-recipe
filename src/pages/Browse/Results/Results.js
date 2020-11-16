@@ -1,24 +1,24 @@
 import React from "react";
 import RecipeContainer from "../../../components/RecipeContainer/RecipeContainer";
 import RecipeCard from "../../../components/RecipeCard/RecipeCard";
-import { useStorage, useStorageUpdate } from "../../../hooks/StorageContext";
+import { useStore, useStoreUpdate } from "../../../hooks/StorageContext";
 import classes from "./Results.module.css";
 
 const Results = () => {
-  const { sessionResults, localResults } = useStorage();
-  const { setLocalResults } = useStorageUpdate();
+  const { storedSession, storedLocal  } = useStore();
+  const { setResults } = useStoreUpdate();
 
   const findRecipeMatch = (items, check) => [ items.find( item => item.id.toString() === check) ];
 
   const submitSaveHandler = e => {
     const recipeID = e.currentTarget.closest("li").id;
-    const match = findRecipeMatch(sessionResults, recipeID);
+    const match = findRecipeMatch(storedSession, recipeID);
 
-    if (!localResults) return setLocalResults(match);
-    if (localResults.some( recipe => recipe.id === match[0].id)) return;
+    if (!storedLocal) return setResults(match, "local");
+    if (storedLocal.some( recipe => recipe.id === match[0].id)) return;
 
     try {
-        setLocalResults([ ...localResults, ...match]);
+        setResults([ ...storedLocal, ...match], "local");
     } catch (err) {
         console.error(err);
       }
@@ -26,8 +26,8 @@ const Results = () => {
 
   return (
     <RecipeContainer>
-      {sessionResults
-      ? sessionResults.map( recipe => <RecipeCard 
+      {storedSession.length > 0
+      ? storedSession.map( recipe => <RecipeCard 
         key={recipe.id}
         id={recipe.id}
         title={recipe.title} 

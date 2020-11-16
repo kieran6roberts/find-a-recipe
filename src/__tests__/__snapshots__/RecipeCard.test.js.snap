@@ -26,6 +26,7 @@ exports[`<RecipeCard /> that outputs recipe information snapshot 1`] = `
       onClick={true}
     >
       <svg
+        className="icon"
         color="fff"
         fill="currentColor"
         height="1em"
@@ -70,6 +71,7 @@ exports[`<RecipeCard /> that outputs recipe information snapshot 1`] = `
       onClick={[Function]}
     >
       <svg
+        className="icon"
         color="fff"
         fill="currentColor"
         height="1em"
@@ -123,6 +125,7 @@ exports[`<RecipeCard /> that outputs recipe information snapshot 1`] = `
       onClick={[Function]}
     >
       <svg
+        className="icon"
         color="fff"
         fill="currentColor"
         height="1em"

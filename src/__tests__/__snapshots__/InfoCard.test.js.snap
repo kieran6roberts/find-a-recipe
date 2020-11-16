@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoCard /> snapshot 1`] = `
+<div
+  className="flexItem"
+>
+  <h2
+    className="header"
+  >
+    title
+  </h2>
+  <div
+    className="info"
+  >
+    Navigate to the search page to begin searching for recipes. Search by keywords that would included in the name of the recipe.
+  </div>
+  <img
+    alt="alt"
+    className="class"
+    sizes="sizes"
+    src="src"
+    srcSet="srcset"
+  />
+</div>
+`;

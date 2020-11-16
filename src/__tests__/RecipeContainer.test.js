@@ -1,5 +1,5 @@
 import RecipeContainer from "../components/Button/Button";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 describe("<RecipeContainer />", () => {
     test("renders", () => {

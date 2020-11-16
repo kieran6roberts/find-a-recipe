@@ -18,3 +18,10 @@
 .btn:active {
   background-color: #f00;
 }
+
+@media (min-width: 1400px) {
+  .btn {
+    height: 5rem;
+    width: 5rem;
+  }
+}

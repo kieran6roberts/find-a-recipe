@@ -3,8 +3,9 @@ import { fireEvent, render } from "@testing-library/react";
 import Form from "../containers/Form/Form";
 import StorageProvider from "../hooks/StorageContext";
 
-beforeEach( () => {
+afterAll( () => {
   jest.clearAllMocks();
+  global.fetch.mockRestore();
 })
 
 describe("<Form />", () => {
@@ -23,7 +24,7 @@ describe("<Form />", () => {
       <StorageProvider>
         <Form/>
       </StorageProvider>);
-
+      
       jest.spyOn(global, "fetch").mockImplementation( () => {
         Promise.resolve({
           json: () => Promise.resolve()
@@ -41,8 +42,5 @@ describe("<Form />", () => {
       await fireEvent.submit(submit);
       await fireEvent.submit(submit);
       expect(window.fetch).toHaveBeenCalledTimes(3);
-
-
-      global.fetch.mockRestore();
   });
 });

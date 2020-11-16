@@ -1,25 +1,23 @@
 import React, { createContext, useContext } from "react";
-import useSessionStorage from "./useSessionStorage";
-import useLocalStorage from "./useLocalStorage";
+import useStorage from "./useStorage";
 
 const StorageContext = createContext();
 const StorageUpdateContext = createContext();
 
-export const useStorage = () => {
+export const useStore = () => {
   return useContext(StorageContext);
 };
 
-export const useStorageUpdate = () => {
+export const useStoreUpdate = () => {
   return useContext(StorageUpdateContext);
 };
 
 const StorageProvider = ({ children }) => {
-  const [ sessionResults, setSessionResults ] = useSessionStorage("searchResults");
-  const [ localResults, setLocalResults ] = useLocalStorage("savedResults");
+  const [ storedSession, storedLocal, setResults] = useStorage("results");
 
   return (
-    <StorageContext.Provider value={{ sessionResults, localResults }}>
-      <StorageUpdateContext.Provider value={{ setSessionResults, setLocalResults }}>
+    <StorageContext.Provider value={{ storedLocal, storedSession }}>
+      <StorageUpdateContext.Provider value={{ setResults }}>
         {children}
       </StorageUpdateContext.Provider>
     </StorageContext.Provider>

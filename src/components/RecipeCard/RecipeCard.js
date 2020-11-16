@@ -14,8 +14,8 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
         <h2 className={classes.name}>{title} <span className={classes.serve}>(time to serve: {ready})</span></h2>
         <Button onClickFunc={save}>
           {deleteIcon
-          ? <FaTrash color="fff" />
-          : <FaHeart color="fff" />
+          ? <FaTrash color="fff" className={classes.icon}/>
+          : <FaHeart color="fff" className={classes.icon}/>
           }
         </Button>
       </div>
@@ -32,7 +32,7 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
           toggleActiveItem(id);
           toggleOpenIngredients();
         }}>
-          <FaArrowDown color="fff"/>
+          <FaArrowDown color="fff" className={classes.icon}/>
         </Button>
       </div>
 
@@ -55,7 +55,7 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
           toggleActiveItem(id);
           toggleOpenInstructions();
         }}>
-          <FaArrowDown color="fff"/>
+          <FaArrowDown color="fff" className={classes.icon}/>
         </Button>
       </div>
 

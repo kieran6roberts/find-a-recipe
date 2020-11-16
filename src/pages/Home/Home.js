@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import classes from "./Home.module.css";
-import chefHatImg from "../../assets/chef-hat.png";
+import chefHatImg from "../../assets/chef-hat.svg";
 
 const Home = () => {
   return (
