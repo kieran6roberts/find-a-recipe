@@ -12,14 +12,15 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
   return (
     <li key={id}  className={classes.item} id={id}>
       <div className={classes.header}>
-        <h2 className={classes.name}>{title} <span className={classes.serve}>(time to serve: {ready})</span></h2>
+        <h2 className={classes.name}>{title}</h2>
         <Button onClickFunc={save}>
           {deleteIcon
           ? <FaTrash color="fff" className={classes.icon}/>
           : <FaHeart color="fff" className={classes.icon}/>
-          }
+        }
         </Button>
       </div>
+      <h3 className={classes.serve}>(time to serve: {ready})</h3>
 
       <span className={classes.dividerTitle} />
 
@@ -42,9 +43,9 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
                         activeItem === id &&
                         classes.open}`}>
 
-        {ingredients
-        ?  ingredients.map( (ingredient, index) => <li key={index} className={classes.ingredients}>{ingredient.name}, </li>)
-        : <span>Ingredients not available for this recipe</span>
+        {!ingredients
+        ? <span>Ingredients not available for this recipe</span>
+        :  ingredients.map( (ingredient, index) => <li key={index} className={classes.ingredients}>{ingredient.name}, </li>)
       }
       </ul>
 
@@ -64,10 +65,16 @@ const RecipeCard = ({ id, title, image, save, deleteIcon, steps, ready, ingredie
                       ${openInstructions &&
                         activeItem === id &&
                         classes.open}`}>
-        {steps
-        ?  steps.map( step => <li key={step.number} className={classes.instruction}>{step.step}</li>)
-        : <span>No instructions for this recipe</span>
-       }
+        {!steps
+        ? <span>No instructions for this recipe</span>
+        :  steps.map( step => {
+            if (step) {
+            return <li key={step.number} className={classes.instruction}>{step.step}</li> 
+            } else {
+              return <li>No instructions for this recipe</li>
+            }
+        })
+      }
       </ul>
     </li>
   )

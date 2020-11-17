@@ -74,7 +74,6 @@
   visibility: hidden;
   opacity: 0;
   list-style: inside;
-  text-transform: capitalize;
   font-size: var(--text-xs);
 }
 

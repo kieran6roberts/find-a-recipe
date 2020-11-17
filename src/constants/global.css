@@ -5,7 +5,7 @@
   --dark1: #0e0d0d;
   --dark2: #222020;
   --dark3: #474242;
-  --primary-color: #eec40b;
+  --primary-color: rgb(238, 196, 11);
   --font: "Montserrat", sans-serif;
   --text-lg: clamp(2.2rem, 2.3vw, 3.2rem);
   --text-md: clamp(1.4rem, 1.9vw, 2.2rem);

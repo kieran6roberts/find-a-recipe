@@ -26,17 +26,19 @@ const Results = () => {
 
   return (
     <RecipeContainer>
-      {storedSession
-      ? storedSession.map( recipe => <RecipeCard 
+      {!storedSession || storedSession.length === 0
+      ? <li className={classes.emptyList}>results are empty</li>
+      : storedSession.map( recipe => <RecipeCard 
         key={recipe.id}
         id={recipe.id}
         title={recipe.title} 
         image={recipe.image}
         save={submitSaveHandler}
-        steps={recipe.analyzedInstructions[0].steps}
+        steps={recipe.analyzedInstructions.length > 0 
+        ? recipe.analyzedInstructions[0].steps
+        : null}
         ready={recipe.readyInMinutes}
         ingredients={recipe.extendedIngredients} />)
-      : <li className={classes.emptyList}>results are empty</li>
       }
     </RecipeContainer>
   )

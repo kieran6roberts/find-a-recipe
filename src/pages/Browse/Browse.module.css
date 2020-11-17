@@ -13,6 +13,14 @@
   margin-bottom: var(--space-lg);
 }
 
+.link {
+  color: var(--primary-color);
+}
+
+.link:hover {
+  color: var(--light3);
+}
+
 .listImg {
   position: absolute;
   width: 100%;

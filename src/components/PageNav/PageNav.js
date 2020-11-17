@@ -30,7 +30,7 @@ const PageNav = ({ header = "Find a Recipe", url, links = [] }) => {
 
 PageNav.propTypes = {
   header: PropTypes.string,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   links: PropTypes.array
 };
 
